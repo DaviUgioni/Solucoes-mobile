@@ -15,7 +15,8 @@ export function Davi(){
         <view>
 
             <text>Meu primeiro componente sozinho</text>
-            <Image source={require("../source/jair.jpg")} />
+            
+            
         </view>
     )
 }
