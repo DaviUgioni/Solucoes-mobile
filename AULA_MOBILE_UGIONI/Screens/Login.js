@@ -1,6 +1,6 @@
 import { View, TextInput, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
 
-export default function Login(){
+export default function Login({navigation}){
     return(
         <View style={styles.container}>
             <Text style={styles.texto}>Login</Text>
@@ -17,6 +17,9 @@ export default function Login(){
             <TouchableOpacity style={styles.botao}>
                 <Text style={styles.botaoText}>Entrar</Text>
             </TouchableOpacity>
+
+           
+
         </View>
     )
 }
