@@ -1,6 +1,6 @@
 import { View, TextInput, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
 
-export default function Login({navigation}){
+export default function Login({ navigation }){
     return(
         <View style={styles.container}>
             <Text style={styles.texto}>Login</Text>
@@ -10,15 +10,25 @@ export default function Login({navigation}){
                 source={require('../source/max.jpg')}
             />
 
-            <TextInput style={styles.textInput} placeholder="Usuario" placeholderTextColor={"#612712"}/>
+            <TextInput 
+                style={styles.textInput} 
+                placeholder="Usuario" 
+                placeholderTextColor={"#612712"}
+            />
 
-            <TextInput style={styles.textInput} placeholder="Senha" placeholderTextColor={"#612712"} secureTextEntry/>
+            <TextInput 
+                style={styles.textInput} 
+                placeholder="Senha" 
+                placeholderTextColor={"#110501ff"} 
+                secureTextEntry
+            />
 
-            <TouchableOpacity style={styles.botao}>
+            <TouchableOpacity 
+                style={styles.botao}
+                onPress={() => navigation.navigate("Home")} // 👈 AQUI
+            >
                 <Text style={styles.botaoText}>Entrar</Text>
             </TouchableOpacity>
-
-           
 
         </View>
     )
@@ -29,7 +39,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#25d460ff'
+        backgroundColor: '#6d6e6dff'
     },
     texto:{
         fontSize: 30,
@@ -40,7 +50,7 @@ const styles = StyleSheet.create({
     foto:{
         width: 120,
         height: 120,
-        borderRadius: 70,      
+        borderRadius: 45,      
         marginBottom: 28,
         borderWidth: 3,
         borderColor: '#fff',
@@ -57,7 +67,7 @@ const styles = StyleSheet.create({
     },
     botao:{
         width: '80%',
-        backgroundColor: '#612712',   
+        backgroundColor: '#0e0d0dff',   
         paddingVertical: 14,
         borderRadius: 8,
         alignItems: 'center',

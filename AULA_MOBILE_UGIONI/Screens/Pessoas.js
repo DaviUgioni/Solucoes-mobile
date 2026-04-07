@@ -1,96 +1,101 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { Card } from 'react-native-paper';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { Card, Button } from 'react-native-paper';
 
-export function Pessoas(){
+export function Pessoas({ navigation }){
     return(
-        <View style={styles.conteiner}>
-            <Card>
-            <Image style={styles.foto}
-            source={require('../source/alonsoo.webp')} 
-            />
-            <Text style={styles.txt}>Nome: Davi </Text>
-            <Text style={styles.txt}>Idade: 18 </Text>
-            <Text style={styles.txt}>Cidade: Críciuma </Text>
-            <Text style={styles.txt}>Profissão: Estudante </Text>
-             <br/>
-            <Image style={styles.foto}
-            source={require('../source/max.jpg')} 
-            />
-            <Text style={styles.txt}>Nome: Guilherme </Text>
-            <Text style={styles.txt}>Idade: 18 </Text>
-            <Text style={styles.txt}>Cidade: Síderopolis </Text>
-            <Text style={styles.txt}>Profissão: Estudante </Text>
-             <br/>
-            <Image style={styles.foto}
-            source={require('../source/vinicius.jpg')} 
-            />
-            <Text style={styles.txt}>Nome: Vinicius </Text>
-            <Text style={styles.txt}>Idade: 18 </Text>
-            <Text style={styles.txt}>Cidade: Críciuma </Text>
-            <Text style={styles.txt}>Profissão: Estudante </Text>
-             <br/>
-            <Image style={styles.foto}
-            source={require('../source/pedro.jpg')} 
-            />
-            <br/>
-            <Text style={styles.txt}>Nome:Pedro  </Text>
-            <Text style={styles.txt}>Idade: 17 </Text>
-            <Text style={styles.txt}>Cidade: Críciuma </Text>
-            <Text style={styles.txt}>Profissão: Estudante </Text>
+        <ScrollView contentContainerStyle={styles.container}>
+            <Card style={styles.card}>
 
-            <Image style={styles.foto}
-            source={require('../source/alonsoo.webp')} 
-            />
-            <Text>Nome: Clovis </Text>
-            <Text>Idade: 24 </Text>
-            <Text>Cidade: Críciuma </Text>
-            <Text>Profissão: Uber </Text>
+                <Image style={styles.foto} source={require('../source/alonsoo.webp')} />
+                <Text style={styles.txt}>Nome: Davi</Text>
+                <Text style={styles.txt}>Idade: 18</Text>
+                <Text style={styles.txt}>Cidade: Criciúma</Text>
+                <Text style={styles.txt}>Profissão: Estudante</Text>
 
+                <View style={styles.espaco} />
 
-            <Image style={styles.foto}
-            source={require('../source/alonsoo.webp')} 
-            />
-            <Text>Nome: Julia </Text>
-            <Text>Idade: 25 </Text>
-            <Text>Cidade: Forquilinha </Text>
-            <Text>Profissão: Padeira </Text>
+                <Image style={styles.foto} source={require('../source/max.jpg')} />
+                <Text style={styles.txt}>Nome: Guilherme</Text>
+                <Text style={styles.txt}>Idade: 18</Text>
+                <Text style={styles.txt}>Cidade: Siderópolis</Text>
+                <Text style={styles.txt}>Profissão: Estudante</Text>
 
-            <Image style={styles.foto}
-            source={require('../source/alonsoo.webp')} 
-            />
-            <Text>Nome: João </Text>
-            <Text>Idade: 24 </Text>
-            <Text>Cidade: Críciuma </Text>
-            <Text>Profissão: Uber </Text>
+                <View style={styles.espaco} />
+
+                <Image style={styles.foto} source={require('../source/vinicius.jpg')} />
+                <Text style={styles.txt}>Nome: Vinicius</Text>
+                <Text style={styles.txt}>Idade: 18</Text>
+                <Text style={styles.txt}>Cidade: Criciúma</Text>
+                <Text style={styles.txt}>Profissão: Estudante</Text>
+
+                <View style={styles.espaco} />
+
+                <Image style={styles.foto} source={require('../source/pedro.jpg')} />
+                <Text style={styles.txt}>Nome: Pedro</Text>
+                <Text style={styles.txt}>Idade: 17</Text>
+                <Text style={styles.txt}>Cidade: Criciúma</Text>
+                <Text style={styles.txt}>Profissão: Estudante</Text>
+
+                <View style={styles.espaco} />
+
+                <Image style={styles.foto} source={require('../source/alonsoo.webp')} />
+                <Text style={styles.txt}>Nome: Clovis</Text>
+                <Text style={styles.txt}>Idade: 24</Text>
+                <Text style={styles.txt}>Cidade: Criciúma</Text>
+                <Text style={styles.txt}>Profissão: Uber</Text>
+
+                <View style={styles.espaco} />
+
+                <Image style={styles.foto} source={require('../source/alonsoo.webp')} />
+                <Text style={styles.txt}>Nome: Julia</Text>
+                <Text style={styles.txt}>Idade: 25</Text>
+                <Text style={styles.txt}>Cidade: Forquilinha</Text>
+                <Text style={styles.txt}>Profissão: Padeira</Text>
+
+                <View style={styles.espaco} />
+
+                <Image style={styles.foto} source={require('../source/alonsoo.webp')} />
+                <Text style={styles.txt}>Nome: João</Text>
+                <Text style={styles.txt}>Idade: 24</Text>
+                <Text style={styles.txt}>Cidade: Criciúma</Text>
+                <Text style={styles.txt}>Profissão: Uber</Text>
+
+               
+
+                
 
             </Card>
-        </View>
-
-
-
-
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
-        justifyContent: 'center',
+        flexGrow: 1,
         alignItems: 'center',
-        backgroundColor: '#ffffffff'
+        backgroundColor: '#fff',
+        padding: 20
+    },
+
+    card:{
+        width: '100%',
+        padding: 15
     },
 
     foto:{
         width: 100,
         height: 100,
-        borderRadius: 30,      
-        marginBottom: 28,
-        borderWidth: 3,
-        borderColor: '#fff',
-        margin: "auto"
+        borderRadius: 30,
+        marginBottom: 10,
+        alignSelf: 'center'
     },
 
     txt:{
-        margin: "auto"
+        textAlign: 'center',
+        marginBottom: 5
+    },
+
+    espaco:{
+        height: 20
     }
 })

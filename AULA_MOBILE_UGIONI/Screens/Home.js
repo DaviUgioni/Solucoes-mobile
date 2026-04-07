@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { Card, Button } from 'react-native-paper';
-import {drivers} from "../data/drivers";
+import { drivers } from "../data/drivers";
 import { useState } from 'react';
 
-export default function Home() {
+export default function Home({ navigation }) { // 👈 receber navigation
 
   const [index, setIndex] = useState(0);
 
@@ -17,7 +17,6 @@ export default function Home() {
 
   const piloto = drivers[index];
 
-  // ⭐ cria as estrelas automaticamente
   const renderStars = (num) => {
     return '⭐'.repeat(num);
   };
@@ -38,13 +37,14 @@ export default function Home() {
           <Text style={styles.stars}>
             {renderStars(piloto.stars)}
           </Text>
-
         </Card.Content>
 
         <Card.Actions>
           <Button onPress={proximoPiloto}>
             Próximo piloto
           </Button>
+
+          
         </Card.Actions>
 
       </Card>
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: "#414242ff"
   },
   card: {
     width: 300,
